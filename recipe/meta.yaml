@@ -8,20 +8,28 @@ source:
   fn:   sip-{{ version }}.tar.gz  # [unix]
   url:  http://sourceforge.net/projects/pyqt/files/sip/sip-{{ version }}/sip-{{ version }}.tar.gz  # [unix]
   sha256: 740df844f80cc45dcc9b23294a92492923bc403ce88e68c35783f27c177c4b74  # [unix]
+  patches:
+    - 0001-Do-not-override-CC-CXX-LINK-in-sipgen-Makefile.patch
   fn:   sip-{{ version }}.zip  # [win]
   url:  http://sourceforge.net/projects/pyqt/files/sip/sip-{{ version }}/sip-{{ version }}.zip  # [win]
   sha256: ed3bf946cff8895bdf26f36d08cfc1d3f2f06ad7298b6a2d7137ca9df2c9729f  # [win]
+  patches:
+    - 0001-Do-not-override-CC-CXX-LINK-in-sipgen-Makefile.patch
 
 build:
-  number: 1
+  number: 2
 
 requirements:
   build:
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
     - python
   run:
     - python
 
 test:
+  requires:
+    - {{ compiler('cxx') }}
   imports:
     - sip
   files:
@@ -45,5 +53,6 @@ about:
 extra:
   recipe-maintainers:
     - ccordoba12
+    - mingwandroid
     - msarahan
     - ocefpaf
