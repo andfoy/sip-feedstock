@@ -7,14 +7,12 @@ package:
 source:
   fn:   sip-{{ version }}.tar.gz  # [unix]
   url:  http://sourceforge.net/projects/pyqt/files/sip/sip-{{ version }}/sip-{{ version }}.tar.gz  # [unix]
-  sha256: 9bce7a2dbf7f105bf68ad1bab58eebc0ce33087ec40396da756463f086ffa290  # [unix]
-  patches:
-    - 0001-Do-not-override-CC-CXX-LINK-in-sipgen-Makefile.patch
-  fn:   sip-{{ version }}.zip  # [win]
-  url:  http://sourceforge.net/projects/pyqt/files/sip/sip-{{ version }}/sip-{{ version }}.zip  # [win]
-  sha256: 63905b501e67b07734985e8a544390f07578c9c294a91da921b54b2628cdaace  # [win]
-  patches:
-    - 0001-Do-not-override-CC-CXX-LINK-in-sipgen-Makefile.patch
+  sha256: 9bce7a2dbf7f105bf68ad1bab58eebc0ce33087ec40396da756463f086ffa290                         # [unix]
+  patches:                                                                                         # [unix]
+    - 0001-Do-not-override-CC-CXX-LINK-in-sipgen-Makefile.patch                                    # [unix]
+  fn:   sip-{{ version }}.zip                                                                      # [win]
+  url:  http://sourceforge.net/projects/pyqt/files/sip/sip-{{ version }}/sip-{{ version }}.zip     # [win]
+  sha256: 63905b501e67b07734985e8a544390f07578c9c294a91da921b54b2628cdaace                         # [win]
 
 build:
   number: 2
