@@ -18,10 +18,11 @@ build:
   number: 2
 
 requirements:
+  host:
+    - python
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - python
   run:
     - python
 
