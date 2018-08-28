@@ -1,4 +1,4 @@
-{% set version = "4.19.8" %}
+{% set version = "4.19.12" %}
 
 package:
   name: sip
@@ -6,7 +6,7 @@ package:
 
 source:
   url:  http://sourceforge.net/projects/pyqt/files/sip/sip-{{ version }}/sip-{{ version }}.tar.gz
-  sha256: 7eaf7a2ea7d4d38a56dd6d2506574464bddf7cf284c960801679942377c297bc
+  sha256: 24617fc31b983df075500ecac0e99d2fb48bf63ba82d4a17518659e571923822
   patches:
     - 0001-Do-not-override-CC-CXX-LINK-in-sipgen-Makefile.patch
 
@@ -17,6 +17,7 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    - make  # [unix]
   host:
     - python
   run:
@@ -25,6 +26,7 @@ requirements:
 test:
   requires:
     - {{ compiler('cxx') }}
+    - make  # [unix]
   imports:
     - sip
   files:
