@@ -1,7 +1,3 @@
-#!/bin/bash
+set -exou
 
-export LINK=${CC}
-${PYTHON} configure.py --sysroot=${PREFIX}
-
-make
-make install
+$PYTHON -m pip install . -vv
